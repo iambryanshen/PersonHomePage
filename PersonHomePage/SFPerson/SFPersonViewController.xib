@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFPersonViewController" customModule="PersonHomePage" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Kiv-O3-UjV" id="XoM-N9-PNc"/>
+                <outlet property="headerBgImageView" destination="Eyk-Z8-rGE" id="9hE-sY-eCc"/>
+                <outlet property="headerContainerView" destination="5C1-Uv-QUP" id="bni-GN-dY3"/>
+                <outlet property="headerViewHeightConstraint" destination="YR8-hn-cBm" id="ZaL-Uo-2Bp"/>
+                <outlet property="iconImageView" destination="CAf-dZ-Ahe" id="IZf-D3-grL"/>
+                <outlet property="tabBarView" destination="ONK-ys-IUy" id="ijC-Lz-AA8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uQC-Zg-h3p"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kiv-O3-UjV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-Uv-QUP" userLabel="头部视图">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eyk-Z8-rGE">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CAf-dZ-Ahe">
+                            <rect key="frame" x="137" y="86" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="ju9-1g-tZ1"/>
+                                <constraint firstAttribute="width" constant="100" id="nm5-O2-GJW"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CAf-dZ-Ahe" secondAttribute="bottom" constant="64" id="4CI-lk-jKX"/>
+                        <constraint firstAttribute="bottom" secondItem="Eyk-Z8-rGE" secondAttribute="bottom" id="Ny1-WZ-lry"/>
+                        <constraint firstAttribute="height" constant="250" id="YR8-hn-cBm"/>
+                        <constraint firstAttribute="trailing" secondItem="Eyk-Z8-rGE" secondAttribute="trailing" id="YaW-t3-SOT"/>
+                        <constraint firstItem="CAf-dZ-Ahe" firstAttribute="centerX" secondItem="5C1-Uv-QUP" secondAttribute="centerX" id="fiV-8B-OfO"/>
+                        <constraint firstItem="Eyk-Z8-rGE" firstAttribute="top" secondItem="5C1-Uv-QUP" secondAttribute="top" id="nMq-JK-Jdj"/>
+                        <constraint firstItem="Eyk-Z8-rGE" firstAttribute="leading" secondItem="5C1-Uv-QUP" secondAttribute="leading" id="vnh-br-aQz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONK-ys-IUy" userLabel="选项卡视图">
+                    <rect key="frame" x="0.0" y="250" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="SRY-ob-KNU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5C1-Uv-QUP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GRY-Ph-vqD"/>
+                <constraint firstAttribute="trailing" secondItem="5C1-Uv-QUP" secondAttribute="trailing" id="KuV-r6-enp"/>
+                <constraint firstItem="ONK-ys-IUy" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="N00-r9-67c"/>
+                <constraint firstAttribute="bottom" secondItem="Kiv-O3-UjV" secondAttribute="bottom" id="Tof-LT-rwF"/>
+                <constraint firstItem="5C1-Uv-QUP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zij-eG-Dqg"/>
+                <constraint firstItem="ONK-ys-IUy" firstAttribute="top" secondItem="5C1-Uv-QUP" secondAttribute="bottom" id="e1N-JC-UVl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kiv-O3-UjV" secondAttribute="trailing" id="ezE-O4-yO6"/>
+                <constraint firstItem="ONK-ys-IUy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hK8-iS-4PO"/>
+                <constraint firstItem="Kiv-O3-UjV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iln-j8-iFe"/>
+                <constraint firstItem="Kiv-O3-UjV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qPh-OM-BaY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+        <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vT3-BF-Za1" customClass="SFTableView" customModule="PersonHomePage" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="857" y="55"/>
+        </tableView>
+    </objects>
+</document>
