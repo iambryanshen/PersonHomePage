@@ -8,9 +8,9 @@
 
 import UIKit
 
-let HeaderViewHeight: CGFloat = 250
-let TabBarViewHeight: CGFloat = 44
-let HeaderViewMinHeight: CGFloat = UIApplication.shared.statusBarFrame.height + 44
+let kHeaderViewHeight: CGFloat = 250
+let kTabBarViewHeight: CGFloat = 44
+let kHeaderViewMinHeight: CGFloat = UIApplication.shared.statusBarFrame.height + 44
 
 private let reuseIdentifier = "Cell"
 
@@ -35,7 +35,7 @@ class SFPersonTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if let tableView = tableView as? SFTableView {
-            tableView.contentInset = UIEdgeInsets(top: HeaderViewHeight + TabBarViewHeight, left: 0, bottom: 0, right: 0)
+            tableView.contentInset = UIEdgeInsets(top: kHeaderViewHeight + kTabBarViewHeight, left: 0, bottom: 0, right: 0)
             tableView.iconImageView = iconImageView
             tableView.tabBarView = tabBarView
         }
@@ -47,17 +47,19 @@ extension SFPersonTableViewController {
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        print(scrollView.contentOffset)
+        
         // 控制header背景图缩放、TabBarView跟随移动
         let offsetY: CGFloat = scrollView.contentOffset.y
-        let dis = -(HeaderViewHeight + TabBarViewHeight) - offsetY
-        var headerViewHeight = dis + HeaderViewHeight
-        if headerViewHeight < HeaderViewMinHeight {
-            headerViewHeight = HeaderViewMinHeight
+        let dis = -(kHeaderViewHeight + kTabBarViewHeight) - offsetY
+        var headerViewHeight = dis + kHeaderViewHeight
+        if headerViewHeight < kHeaderViewMinHeight {
+            headerViewHeight = kHeaderViewMinHeight
         }
         headerViewHeightConstraint.constant = headerViewHeight
         
         // 计算透明度
-        let alpha = -dis / (HeaderViewHeight - HeaderViewMinHeight)
+        let alpha = -dis / (kHeaderViewHeight - kHeaderViewMinHeight)
         
         // 设置导航栏文字透明度
         navigationTitleLabel?.textColor = UIColor(white: 0, alpha: alpha)

@@ -162,7 +162,12 @@ extension SFPersonViewController {
         if let currentTableView = self.childViewControllers[button.tag].view as? SFTableView {
             contentView.addSubview(currentTableView)
             if let tempPreviousTableView = tempPreviousTableView {
-                currentTableView.contentOffset = tempPreviousTableView.contentOffset
+                if tempPreviousTableView.contentOffset.y > -(kHeaderViewMinHeight + kTabBarViewHeight) {
+                    print(kHeaderViewHeight - kHeaderViewMinHeight)
+                    currentTableView.contentOffset.y = currentTableView.contentOffset.y + (kHeaderViewHeight - kHeaderViewMinHeight)
+                } else if tempPreviousTableView.contentOffset.y < -(kHeaderViewMinHeight + kTabBarViewHeight) && tempPreviousTableView.contentOffset.y > -(kHeaderViewHeight + kTabBarViewHeight) {
+                    currentTableView.contentOffset.y = currentTableView.contentOffset.y + (tempPreviousTableView.contentOffset.y + (kHeaderViewHeight + kTabBarViewHeight))
+                }
             }
         }
         
